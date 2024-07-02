@@ -36,7 +36,20 @@ router. post('/notes', (req, res) => {
 
 });
 
+//BONUS
 
+//DELETE /api/notes/:id - Delete a note
+router.delete('/notes/:id', (req, res) => {
+    const noteId = req.params.id;
+
+    let notes = readDbFile();
+    notes = notes.filter(note => note.id !== noteId); //This arrow function takes each note object in the array and checks if its id property is not equal to the value of noteId
+    writeDbFile(notes);
+
+    res.json({ message: 'Note deleted successfully!'})
+});
+
+module.exports = router;
 
 
 
