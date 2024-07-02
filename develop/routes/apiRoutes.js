@@ -23,6 +23,19 @@ router.get('/notes', (req, res) => {
     res.json(notes);
 });
 
+// POST /api/notes - save a new note
+router. post('/notes', (req, res) => {
+    const {title, text} = req.body;
+    const newNote =  { id: uuidv4(), title, text };
+
+    const notes = readDbFile();
+    notes.push(newNote);
+    writeDbFile(notes);
+
+    res.json(newNote);
+
+});
+
 
 
 
