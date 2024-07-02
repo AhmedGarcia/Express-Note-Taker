@@ -17,6 +17,12 @@ const writeDbFile = (data) => {
     fs.writeFileSync(dbPath, JSON.stringify(data, null, 2));
 };
 
+// GET /api/notes - Retrieve all notes
+router.get('/notes', (req, res) => {
+    const notes = readDbFile();
+    res.json(notes);
+});
+
 
 
 
