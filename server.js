@@ -1,4 +1,4 @@
-const express = require('express'); 
+const express = require('express');
 const path = require('path');
 const apiRoutes = require('./routes/apiRoutes');
 const htmlRoutes = require('./routes/htmlRoutes');
@@ -6,14 +6,18 @@ const htmlRoutes = require('./routes/htmlRoutes');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(express.json()); // Middleware to parse JSON payloads
-app.use(express.urlencoded({ extended: true })); // Middleware to parse URL-encoded payloads
-app.use(express.static('public')); // Middleware to serve static files from the 'public' directory
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-app.use('/api', apiRoutes); // Middleware to use API routes, prefixed with '/api'
-app.use('/', htmlRoutes); // Middleware to use HTML routes, prefixed with '/'
+// Serve static files from the 'public' directory
+app.use(express.static(path.join(__dirname, 'public')));
 
-// Start the server
+// Use API routes
+app.use('/api', apiRoutes);
+
+// Use HTML routes
+app.use('/', htmlRoutes);
+
 app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
