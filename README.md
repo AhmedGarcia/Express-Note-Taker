@@ -155,3 +155,8 @@ git push origin feature-branch
 
 This project is licensed under the MIT License. See the LICENSE file for details.
 
+## Contact Us
+
+GitHub User: https://github.com/AhmedGarcia
+
+GitHub Repo: https://github.com/AhmedGarcia/Express-Note-Taker
