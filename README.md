@@ -24,20 +24,21 @@ SO THAT I can organize my thoughts and keep track of tasks I need to complete
 - File system (fs) module for reading and writing data to JSON file
 
 ## Project Structure
+
 /your-project-directory
-/db
-db.json
-/public
-index.html
-notes.html
-app.js
-styles.css
-/routes
-apiRoutes.js
-htmlRoutes.js
-fileUtils.js
-index.js (or app.js)
-package.json
+├── /db
+│   └── db.json
+├── /public
+│   ├── index.html
+│   ├── notes.html
+│   ├── app.js
+│   └── styles.css
+├── /routes
+│   ├── apiRoutes.js
+│   ├── htmlRoutes.js
+│   └── fileUtils.js
+├── server.js
+└── package.json
 
 ## Installation
 
