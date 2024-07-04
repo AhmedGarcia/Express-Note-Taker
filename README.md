@@ -25,6 +25,7 @@ SO THAT I can organize my thoughts and keep track of tasks I need to complete
 
 ## Project Structure
 
+```md
 /your-project-directory
 ├── /db
 │   └── db.json
@@ -39,6 +40,7 @@ SO THAT I can organize my thoughts and keep track of tasks I need to complete
 │   └── fileUtils.js
 ├── server.js
 └── package.json
+```
 
 ## Installation
 
